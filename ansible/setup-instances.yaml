@@ -1,0 +1,18 @@
+# COMP90024 - Cluster and Cloud Computing - 2022 S1 Assignment 2
+#
+---
+- hosts: localhost
+  vars_files:
+    - host_vars/instances.yaml
+  gather_facts: true
+
+  roles:
+    - role: common    
+    - role: create-volumes
+    - role: create-security-groups
+    - role: create-instances
+
+    #- role: openstack-volume
+    #- role: openstack-security-group
+    #- role: openstack-instance
+...
