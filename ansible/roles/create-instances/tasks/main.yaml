@@ -7,7 +7,7 @@
     key_name: '{{ instance_key_name }}'
     flavor: '{{ instance_flavor }}'
     availability_zone: '{{ availability_zone }}'
-    security_groups: '{{ sg_names }}'
+    security_groups: '{{ item.security_groups }}'
     volumes: '{{ item.volumes }}'
     auto_floating_ip: yes
     wait: yes
@@ -17,16 +17,7 @@
   register: os_instance
 
 - ansible.builtin.debug:
-    msg: "Instance {{ item.openstack.name }} has been created. IP address is {{ item.openstack.public_v4 }}"
-  loop: '{{ os_instance.results }}'
-  when: item.openstack is defined
-
-- name: Wait for connection
-  ansible.builtin.wait_for:
-    host: "{{ item.openstack.public_v4 }}"
-    port: 22
-    timeout: 120
-    search_regex: OpenSSH
+    msg: "Instance {{ item.openstack.name }} has been created. IP address is {{ item.openstack.public_v4 }}."
   loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
@@ -34,11 +25,14 @@
 - name: Add host
   ansible.builtin.add_host:
     name: '{{ item.openstack.public_v4 }}'
-    groups: COMP90024
+    group: all_hosts
   loop: '{{ os_instance.results }}'
   when: item.openstack is defined
 
 
-# TODO: add these hosts into inventory
-
+# Create a new hosts file in inventory, add and group the instances ip in to the hosts file
+- name: Store and group the created hosts to inventory
+  template:
+    src: record-ansible-hosts.j2
+    dest: "./inventory/hosts.ini"
 ...

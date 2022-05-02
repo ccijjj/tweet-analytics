@@ -1,0 +1,25 @@
+---
+- name: Format file system on volume
+  filesystem:
+    fstype: ext4
+    dev: "{{ vol_device }}"
+
+- name: Check if directories exist
+  stat:
+    path: "{{ vol_mountpoint }}"
+  register: directory_stats
+
+- name: Create directory
+  file:
+    path: "{{ vol_mountpoint }}"
+    recurse: yes
+    state: directory
+  when: directory_stats.stat.exists == false
+
+- name: Mount device
+  mount:
+    path: "{{ vol_mountpoint }}"
+    src: "{{ vol_device }}"
+    fstype: ext4
+    state: mounted
+...

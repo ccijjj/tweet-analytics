@@ -1,0 +1,29 @@
+---
+- name: Check if CouchDB directory exist
+  stat:
+    path: "{{ couchdb_volume }}"
+  register: directory_stats
+
+- name: Create CouchDB directory
+  file:
+    path: "{{ couchdb_volume }}"
+    recurse: yes
+    state: directory
+  when: directory_stats.stat.exists == false
+
+- name: Start a CouchDB from a Docker container
+  docker_container:
+    name: "couchdb{{ ansible_host }}"
+    image: "{{ couchdb_image }}"
+    ports:
+      - "5984:5984" 
+      - "4369:4369" 
+      - "9100:9100"
+    env:
+      NODENAME: "{{ ansible_host }}"
+      COUCHDB_USER: "{{ couchdb_user }}"
+      COUCHDB_PASSWORD: "{{ couchdb_password }}"
+      COUCHDB_SECRET: "{{ couchdb_cookie }}"    
+    volumes:
+      - "couchdb_volume:{{ couchdb_volume }}"
+...

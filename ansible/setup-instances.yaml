@@ -3,16 +3,23 @@
 ---
 - hosts: localhost
   vars_files:
-    - host_vars/instances.yaml
+    - host_vars/common.yaml
+    - host_vars/openstack.yaml
   gather_facts: true
-
   roles:
-    - role: common    
+    - role: check-prelim
     - role: create-volumes
     - role: create-security-groups
     - role: create-instances
 
-    #- role: openstack-volume
-    #- role: openstack-security-group
-    #- role: openstack-instance
+- hosts: all_hosts
+  become: yes
+  vars_files:
+    - host_vars/common.yaml
+    - host_vars/openstack.yaml
+  gather_facts: true
+  roles:
+    - role: mount-volumes
+    - role: configure-proxy
+    - role: install-docker
 ...

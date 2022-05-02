@@ -1,0 +1,29 @@
+  - name: docker-swarm
+    description: "Security group for docker swarm"
+
+# Docker Swarm rules
+  # Reference: https://docs.docker.com/engine/swarm/swarm-tutorial/
+  - name: docker-swarm-cluster-mgmt-comms
+    security_group: docker-swarm
+    protocol: tcp
+    port_range_min: 2377
+    port_range_max: 2377
+    remote_ip_prefix: 0.0.0.0/0
+  - name: docker-swarm-node-comms-tcp
+    security_group: docker-swarm
+    protocol: tcp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
+  - name: docker-swarm-node-comms-udp
+    security_group: docker-swarm
+    protocol: udp
+    port_range_min: 7946
+    port_range_max: 7946
+    remote_ip_prefix: 0.0.0.0/0
+  - name: docker-swarm-overlay-network
+    security_group: docker-swarm
+    protocol: udp
+    port_range_min: 4789
+    port_range_max: 4789
+    remote_ip_prefix: 0.0.0.0/0

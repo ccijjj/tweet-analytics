@@ -1,0 +1,77 @@
+# Security group variables
+security_groups:
+  - name: common
+    description: "Security group for all servers"
+  - name: couchdb
+    description: "Security group for database servers"
+  # TODO: add frontend 
+  # - name: frontend
+  #  description: "Security group for frontend servers"
+
+# Security group rules variables 
+security_group_rules:
+  # Common rules
+  - name: ssh
+    security_group: common
+    protocol: tcp
+    port_range_min: 22
+    port_range_max: 22
+    remote_ip_prefix: 0.0.0.0/0
+  - name: http
+    security_group: common
+    protocol: tcp
+    port_range_min: 80
+    port_range_max: 80
+    remote_ip_prefix: 0.0.0.0/0
+  
+  # CouchDB rules
+  # Reference: https://docs.couchdb.org/en/stable/setup/cluster.html#the-cluster-setup-api
+  - name: couchdb-single
+    security_group: couchdb    
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb-cluster-comms
+    security_group: couchdb
+    protocol: tcp
+    port_range_min: 4369
+    port_range_max: 4369
+    remote_ip_prefix: 0.0.0.0/0
+  - name: couchdb-cluster-erlang-apps-comms
+    security_group: couchdb
+    protocol: tcp
+    port_range_min: 9100
+    port_range_max: 9200
+    remote_ip_prefix: 0.0.0.0/0
+
+# Volume variables
+volumes:
+  - vol_name: instance-1-volume
+    vol_size: 150    
+  - vol_name: instance-2-volume
+    vol_size: 150
+  - vol_name: instance-3-volume
+    vol_size: 150
+  - vol_name: instance-4-volume
+    vol_size: 30
+vol_device: /dev/vdb
+vol_mountpoint: /home/ubuntu/data
+
+#  Instance variables
+instance_image: aaddbad8-87d7-4ed7-9382-409b9bc42ca6 # NeCTAR Ubuntu 18.04 LTS (Bionic) amd64 (with Docker)
+instance_key_name: group49-key
+instance_flavor: uom.mse.2c9g
+instances:
+  - name: instance-1
+    security_groups: ['common', 'couchdb']
+    volumes: ['instance-1-volume']
+  - name: instance-2
+    security_groups: ['common', 'couchdb']
+    volumes: ['instance-2-volume']
+  - name: instance-3
+    security_groups: ['common', 'couchdb']
+    volumes: ['instance-3-volume']
+  - name: instance-4
+    security_groups: ['common'] #, 'frontend'] 
+    volumes: ['instance-4-volume']

@@ -1,0 +1,12 @@
+---
+# CouchDB security group variables
+# Reference: https://docs.couchdb.org/en/stable/setup/cluster.html#the-cluster-setup-api
+
+couchdb_image: couchdb:3
+couchdb_user: admin
+couchdb_password: chocolate_milkshake
+couchdb_cookie: bubble_tea
+couchdb_volume: "/home/ubuntu/data/couchdb"
+...
+
+
