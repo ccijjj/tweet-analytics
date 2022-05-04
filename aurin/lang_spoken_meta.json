@@ -1,0 +1,373 @@
+{
+    "organisation": "AU_Govt_ABS_Census",
+    "name": "sa3_g13d_lang_spoken_at_home_by_profic_by_sex_census_2016",
+    "title": "SA3-G13d Language Spoken at Home by Proficiency in Spoken Eng by Sex-Census 2016",
+    "legal": {
+        "attribution": "{datasource.organisationTitle}, ({dataset.attributionYear}): {dataset.title}; accessed from AURIN on {dateOfAccess}.",
+        "attributionYear": "2017",
+        "clickthrough": false,
+        "copyrightNotice": "&copy; {datasource.organisationTitle} {dataset.copyrightYear}",
+        "copyrightYear": "2017",
+        "licenceType": "Creative Commons Attribution 2.5 Australia (CC BY 2.5 AU)"
+    },
+    "referenceSystemIdentifier": "urn:x-ogc:def:crs:EPSG:4283",
+    "geoLevel": "sa3_2016",
+    "key": "sa3_code16",
+    "keyRegex": null,
+    "availability": "true",
+    "geomField": "wkb_geometry",
+    "keyword": "census,2016,gcp,general community profile,g13d,language,language spoken at home,sa3",
+    "theme": null,
+    "temporalExtent": {
+        "beginDate": "2016-08-09T00:00:00",
+        "endDate": "2016-08-11T00:00:00",
+        "selectTime": false
+    },
+    "type": "dataset",
+    "_id": "dataset-AU_Govt_ABS_Census-sa3_g13d_lang_spoken_at_home_by_profic_by_sex_census_2016-sa3_2016",
+    "bbox": [
+        96.82,
+        -43.74,
+        159.11,
+        -9.14
+    ],
+    "abstract": "SA3 based data for Language Spoken at Home by Proficiency in Spoken English by Sex, in General Community Profile (GCP), 2016 Census. Count of persons. The list of languages consists of the most common Language Spoken at Home responses reported in the 2011 Census. G13 is broken up into 4 sections (G13a - G13d), this section contains 'Persons Speaks Greek And speaks English Very well or well' - 'Persons Total Total'. The data is by SA3 2016 boundaries. Periodicity: 5-Yearly. <br/>\nNote: There are small random adjustments made to all cell values to protect the confidentiality of data. These adjustments may cause the sum of rows or columns to differ by small amounts from table totals.<br/>\nFor more information visit the data source: <a href=http://www.abs.gov.au/census>http://www.abs.gov.au/census</a>. ",
+    "selectedAttributes": [
+        {
+            "name": "sa3_code16",
+            "type": "String",
+            "title": "SA3 Code 2016",
+            "description": "SA3 Code 2016.",
+            "stype": "nominal",
+            "isDimension": false
+        },
+        {
+            "name": "person_lang_spkn_home_notstated_tot",
+            "type": "Integer",
+            "title": "Persons Language spoken at home not stated Total",
+            "description": "Persons Language spoken at home not stated Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_greek_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Greek Total",
+            "description": "Persons Speaks Greek Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_bengali_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Bengali Total",
+            "description": "Persons Speaks Indo Aryan Languages Bengali Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_hindi_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Hindi Total",
+            "description": "Persons Speaks Indo Aryan Languages Hindi Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_oth_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Other Total",
+            "description": "Persons Speaks Indo Aryan Languages Other Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_punjabi_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Punjabi Total",
+            "description": "Persons Speaks Indo Aryan Languages Punjabi Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_sinhalese_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Sinhalese Total",
+            "description": "Persons Speaks Indo Aryan Languages Sinhalese Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_tot_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Total Total",
+            "description": "Persons Speaks Indo Aryan Languages Total Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_indo_aryan_lang_urdu_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Indo Aryan Languages Urdu Total",
+            "description": "Persons Speaks Indo Aryan Languages Urdu Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_italian_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Italian Total",
+            "description": "Persons Speaks Italian Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_japanese_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Japanese Total",
+            "description": "Persons Speaks Japanese Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_korean_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Korean Total",
+            "description": "Persons Speaks Korean Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_lang_oth_than_eng_tot",
+            "type": "Integer",
+            "title": "Persons Speaks language other than English Total Total",
+            "description": "Persons Speaks language other than English Total Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_macedonian_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Macedonian Total",
+            "description": "Persons Speaks Macedonian Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_maltese_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Maltese Total",
+            "description": "Persons Speaks Maltese Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_oth_lang_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Other Total",
+            "description": "Persons Speaks Other Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_persian_ed_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Persian excluding Dari Total",
+            "description": "Persons Speaks Persian excluding Dari Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_polish_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Polish Total",
+            "description": "Persons Speaks Polish Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_russian_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Russian Total",
+            "description": "Persons Speaks Russian Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_samoan_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Samoan Total",
+            "description": "Persons Speaks Samoan Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_serbian_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Serbian Total",
+            "description": "Persons Speaks Serbian Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_se_asia_austronesia_lang_filipino_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Southeast Asian Austronesian Languages Filipino Total",
+            "description": "Persons Speaks Southeast Asian Austronesian Languages Filipino Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_se_asia_austronesia_lang_indonesian_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Southeast Asian Austronesian Languages Indonesian Total",
+            "description": "Persons Speaks Southeast Asian Austronesian Languages Indonesian Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_se_asia_austronesia_lang_oth_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Southeast Asian Austronesian Languages Other Total",
+            "description": "Persons Speaks Southeast Asian Austronesian Languages Other Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_se_asia_austronesia_lang_tagalog_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Southeast Asian Austronesian Languages Tagalog Total",
+            "description": "Persons Speaks Southeast Asian Austronesian Languages Tagalog Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_spanish_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Spanish Total",
+            "description": "Persons Speaks Spanish Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_tamil_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Tamil Total",
+            "description": "Persons Speaks Tamil Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_se_asia_austronesia_lang_tot_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Southeast Asian Austronesian Languages Total Total",
+            "description": "Persons Speaks Southeast Asian Austronesian Languages Total Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_thai_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Thai Total",
+            "description": "Persons Speaks Thai Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_turkish_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Turkish Total",
+            "description": "Persons Speaks Turkish Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_spks_vietnamese_tot",
+            "type": "Integer",
+            "title": "Persons Speaks Vietnamese Total",
+            "description": "Persons Speaks Vietnamese Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_tot_tot",
+            "type": "Integer",
+            "title": "Persons Total Total",
+            "description": "Persons Total Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_tot_spks_eng_only",
+            "type": "Integer",
+            "title": "Persons Total Speaks English only",
+            "description": "Persons Total Speaks English only.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "sa3_name16",
+            "type": "String",
+            "title": "SA3 Name 2016",
+            "description": "SA3 Name 2016.",
+            "stype": "nominal",
+            "isDimension": false
+        },
+        {
+            "name": "person_tot_all_eng_profic",
+            "type": "Integer",
+            "title": "Persons Total And speaks English Total",
+            "description": "Persons Total And speaks English Total.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_tot_spks_eng_well",
+            "type": "Integer",
+            "title": "Persons Total And speaks English Very well or well",
+            "description": "Persons Total And speaks English Very well or well.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_tot_eng_profic_notstated",
+            "type": "Integer",
+            "title": "Persons Total English proficiency not stated",
+            "description": "Persons Total English proficiency not stated.",
+            "stype": "ratio",
+            "isDimension": false
+        },
+        {
+            "name": "person_tot_spks_eng_notwell",
+            "type": "Integer",
+            "title": "Persons Total And speaks English Not well or not at all",
+            "description": "Persons Total And speaks English Not well or not at all.",
+            "stype": "ratio",
+            "isDimension": false
+        }
+    ],
+    "filter": {
+        "filterType": "tabular",
+        "feature": {
+            "key": "sa3_code16",
+            "geoLevel": "sa3_2016",
+            "geoField": "ignored",
+            "year": "2006",
+            "featureBbox": [
+                144.33363404800002,
+                -38.50298801599996,
+                145.8784120140001,
+                -37.17509899299995
+            ],
+            "featureType": "gccsa_2016",
+            "featureInstance": "2GMEL",
+            "featureName": "Greater Melbourne",
+            "referenceSystemIdentifier": "urn:x-ogc:def:crs:EPSG:4283",
+            "prefix": "",
+            "keyTransform": null
+        },
+        "states": [
+            "2"
+        ]
+    }
+}
