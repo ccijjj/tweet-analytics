@@ -1,0 +1,22 @@
+
+{
+  "_id": "_design/myDesignDoc",
+  "_rev": "38-8f128c478ab9a9fe24b5b3ecace2ba82",
+  "views": {
+    "lang-view": {
+      "map": "function (doc) {\n  emit(doc.lang, 1);\n}"
+    },
+    "year-count": {
+      "map": "function (doc) {\n  if(doc.text){\n    time = doc.createtime.substring(0,4)\n  }\n      \n      emit(time, 1);\n}",
+      "reduce": "_count"
+    },
+    "polarity": {
+      "reduce": "_stats",
+      "map": "function (doc) {\n  if(doc.polarity){\n      emit(doc.id, doc.polarity);\n  }\n}"
+    },
+    "text-view": {
+      "map": "function (doc) {\n  if(doc.text){\n    key = doc.createtime.substring(5,10)\n    emit(key, doc.text);}\n}"
+    }
+  },
+  "language": "javascript"
+}
