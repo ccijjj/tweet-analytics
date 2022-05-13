@@ -31,7 +31,7 @@ count = 0
 try:
     couchclient = couchdb.Server('http://admin:chocolate_milkshake@172.26.129.34:5984/')
 
-    tweet_db_name = 'ccc'
+    tweet_db_name = 'new_tweets'
 
     # Check the duplication of database
     if tweet_db_name in couchclient:
