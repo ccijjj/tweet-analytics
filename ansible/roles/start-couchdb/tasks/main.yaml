@@ -11,6 +11,15 @@
     state: directory
   when: directory_stats.stat.exists == false
 
+#- name: Create a Docker volume for CouchDB
+#  docker_volume:
+#    name: db
+#    driver: local
+#    driver_options:
+#      o: bind
+#      type: ext4
+#      device: "{{ couchdb_volume }}"
+
 - name: Start a CouchDB from a Docker container
   docker_container:
     name: "couchdb{{ ansible_host }}"
@@ -24,6 +33,15 @@
       COUCHDB_USER: "{{ couchdb_user }}"
       COUCHDB_PASSWORD: "{{ couchdb_password }}"
       COUCHDB_SECRET: "{{ couchdb_cookie }}"    
+    
+#    mounts: 
+#    - source: "{{ couchdb_volume }}"
+#      target: /dbdata
+#      type: bind
+      
     volumes:
+      # - couchdb_volume:/dbdata
       - "couchdb_volume:{{ couchdb_volume }}"
+      # - "{{ couchdb_volume }}:/dbdata"  
+      
 ...
