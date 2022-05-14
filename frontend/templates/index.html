@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,300,700|EB+Garamond" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="/static/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="/static/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="/static/sytles/main_style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Menu -->
+    <nav class="menu" id="theMenu">
+        <div class="menu-wrap">
+            <h1 class="logo"><a href="index.html">COMP90024</a></h1>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('dash') }}">Dashboard</a>
+        </div>
+
+        <!-- Menu button -->
+        <div id="menuToggle"><i class="fa fa-bars"></i></div>
+    </nav>
+
+    <!-- ========== Main SECTION ========== -->
+    <section id="home" name="home"></section>
+    <div id="main">
+        <div class="logo">
+            <img src="/static/assets/images/umlogo.png">
+        </div>
+        <div class="container">
+            <div class="row">
+                <h1>Melbourne Livability Analytics</h1>
+                <br>
+                <h2>COMP90024 Cluster and Cloud Computing Project</h2>
+                <br>
+                <div class="col-lg-6 col-lg-offset-3"></div>
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /main -->
+
+    <!-- Footer -->
+    <div id="copyrights">
+        <div class="container">
+            Created By Team 49
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="/static/lib/jquery/jquery.min.js"></script>
+    <script src="/static/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="/static/js/main.js"></script>
+
+</body>
+
+</html>

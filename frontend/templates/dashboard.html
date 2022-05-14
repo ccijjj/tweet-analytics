@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dashboard</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/static/assets/styles/style.min.css">
+
+    <!-- Material Design Icon -->
+    <link rel="stylesheet" href="/static/assets/fonts/material-design/css/materialdesignicons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
+
+    <!-- Dark Themes -->
+    <link rel="stylesheet" href="/static/assets/styles/style-black.min.css">
+</head>
+
+<body>
+    <div class="main-menu">
+        <header class="header">
+            <a href="index.html" class="logo"><i class="fa fa-home">HOME</i></a>
+        </header>
+        <!-- /.header -->
+        <div class="content">
+            <div class="navigation">
+                <h5 class="title">Livability</h5>
+                <!-- /.title -->
+                <ul class="menu js__accordion">
+                    <li class="current">
+                        <a class="waves-effect" href="{{ url_for('dash') }}"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                </ul>
+                <!-- /.menu js__accordion -->
+                <h5 class="title">Scenarios</h5>
+                <!-- /.title -->
+                <ul class="menu js__accordion">
+                    <li class="current active">
+                        <ul class="sub-menu js__content">
+                            <li><a href="{{ url_for('env') }}">Environment</a></li>
+                            <li><a href="{{ url_for('language') }}">Language</a></li>
+                            <li><a href="{{ url_for('rent') }}">Rent</a></li>
+                            <li><a href="{{ url_for('unem') }}">Unemployment</a></li>
+                        </ul>
+                        <!-- /.sub-menu js__content -->
+                    </li>
+                </ul>
+                <!-- /.menu js__accordion -->
+            </div>
+            <!-- /.navigation -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-menu -->
+
+    <div class="fixed-navbar">
+        <div class="pull-left"></div>
+        <!-- /.pull-left -->
+        <div class="pull-right"></div>
+        <!-- /.pull-right -->
+    </div>
+    <!-- /.fixed-navbar -->
+
+
+    <div id="wrapper">
+        <div class="main-content">
+            <div class="row small-spacing">
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Map Of Melbourne - Person Life Expectancy In SA4 Areas</h4>
+                        <!-- /.box-title -->
+                        <img src="/static/assets/images/map.png" usemap="#map" style="height: 480px">
+                        <map name="map">
+                            <area shape="poly" coords="163,238,184,253,197,212,162,205" title="Melbourne - Inner" 
+                                href="javascript:alert('Melbourne - Inner \nPerson life expectancy(2013-2015): 83.8 \nPerson life expectancy(2014-2016): 84.0 \nPerson life expectancy(2015-2017): 84.4 \nPerson life expectancy(2016-2018): 84.9 \nPerson life expectancy(2017-2019): 84.6')" >
+                            <area shape="poly" coords="195,221,240,201,233,242,207,247" title="Melbourne - Inner East" 
+                                href="javascript:alert('Melbourne - Inner East \nPerson life expectancy(2013-2015): 85.5 \nPerson life expectancy(2014-2016): 85.6 \nPerson life expectancy(2015-2017): 85.9 \nPerson life expectancy(2016-2018): 86.5 \nPerson life expectancy(2017-2019): 86.2')">
+                            <area shape="poly" coords="187,257,201,242,226,324" title="Melbourne - Inner South" 
+                                href="javascript:alert('Melbourne - Inner South \nPerson life expectancy(2013-2015): 84.1 \nPerson life expectancy(2014-2016): 84.4 \nPerson life expectancy(2015-2017): 84.6 \nPerson life expectancy(2016-2018): 85.0 \nPerson life expectancy(2017-2019): 84.9')">
+                            <area shape="poly" coords="170,62,247,43,351,108,306,134,278,190,196,208" title="Melbourne - North East" 
+                                href="javascript:alert('Melbourne - North East \nPerson life expectancy(2013-2015): 83.6 \nPerson life expectancy(2014-2016): 83.7 \nPerson life expectancy(2015-2017): 83.8 \nPerson life expectancy(2016-2018): 84.6 \nPerson life expectancy(2017-2019): 84.3')">
+                            <area shape="poly" coords="41,128,104,169,149,207,186,202,162,119,137,15,82,24" title="Melbourne - North West" 
+                                href="javascript:alert('Melbourne - North West \nPerson life expectancy(2013-2015): 83.5 \nPerson life expectancy(2014-2016): 83.2 \nPerson life expectancy(2015-2017): 83.3 \nPerson life expectancy(2016-2018): 83.8 \nPerson life expectancy(2017-2019): 83.8')">
+                            <area shape="poly" coords="292,286,241,208,281,191,310,131,409,152,407,256" title="Melbourne - Outer East" 
+                                href="javascript:alert('Melbourne - Outer East \nPerson life expectancy(2013-2015): 83.6 \nPerson life expectancy(2014-2016): 83.8 \nPerson life expectancy(2015-2017): 84.1 \nPerson life expectancy(2016-2018): 84.5 \nPerson life expectancy(2017-2019): 84.1')">
+                            <area shape="poly" coords="223,249,258,325,260,378,359,408,401,266,297,287" title="Melbourne - South East" 
+                                href="javascript:alert('Melbourne - South East \nPerson life expectancy(2013-2015): 83.6 \nPerson life expectancy(2014-2016): 83.5 \nPerson life expectancy(2015-2017): 83.8 \nPerson life expectancy(2016-2018): 84.4 \nPerson life expectancy(2017-2019): 84.2')">
+                            <area shape="poly" coords="4,166,76,141,157,245,49,285" title="Melbourne - West" 
+                                href="javascript:alert('Melbourne - West \nPerson life expectancy(2013-2015): 83.1 \nPerson life expectancy(2014-2016): 83.1 \nPerson life expectancy(2015-2017): 83.1 \nPerson life expectancy(2016-2018): 83.5 \nPerson life expectancy(2017-2019): 83.3')">
+                            <area shape="poly" coords="96,410,162,473,248,430,258,382,252,327,188,406" title="Mornington Peninsula" 
+                                href="javascript:alert('Mornington Peninsula \nPerson life expectancy(2013-2015): 82.1 \nPerson life expectancy(2014-2016): 82.1 \nPerson life expectancy(2015-2017): 82.7 \nPerson life expectancy(2016-2018): 82.9 \nPerson life expectancy(2017-2019): 82.8')">
+                        </map>
+                        <!-- /.map -->
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-xs-12 -->
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Word Cloud 0f Tweets Related To Livability</h4>
+                        <!-- /.box-title -->
+                        <img src="/static/assets/images/happiness_cloud.png" style="height: 480px">
+                        <!-- /#bar-chartjs-chart.chartjs-chart -->
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-md-12 -->
+
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Bar Chart of Life Expectancy (By Gender)</h4>
+                        <!-- /.box-title -->
+                        <canvas id="bar-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-md-12 -->
+            
+            </div>
+            <!-- /.row small-spacing -->
+        </div>
+        <!-- /.main-content -->
+    </div>
+    <!--/#wrapper -->
+
+    <!-- JavaScript Libraries -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/assets/scripts/jquery.min.js"></script>
+    <script src="/static/assets/scripts/modernizr.min.js"></script>
+    <script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/static/assets/plugin/nprogress/nprogress.js"></script>
+    <script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
+    <script src="/static/assets/plugin/waves/waves.min.js"></script>
+
+
+    <!-- chart.js Chart -->
+    <script src="/static/assets/plugin/chart/chartjs/Chart.bundle.min.js"></script>
+    <script src="/static/assets/scripts/chart.chartjs.black.init.js"></script>
+    
+    <script src="/static/assets/scripts/main.min.js"></script>
+
+</body>
+
+</html>

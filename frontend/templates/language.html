@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Language</title>
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/static/assets/styles/style.min.css">
+
+    <!-- Material Design Icon -->
+    <link rel="stylesheet" href="/static/assets/fonts/material-design/css/materialdesignicons.css">
+
+    <!-- mCustomScrollbar -->
+    <link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
+
+    <!-- Waves Effect -->
+    <link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
+
+    <!-- Sweet Alert -->
+    <link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
+
+    <!-- Dark Themes -->
+    <link rel="stylesheet" href="/static/assets/styles/style-black.min.css">
+</head>
+
+<body>
+    <div class="main-menu">
+        <header class="header">
+            <a href="index.html" class="logo"><i class="fa fa-home">HOME</i></a>
+        </header>
+        <!-- /.header -->
+        <div class="content">
+            <div class="navigation">
+                <h5 class="title">Livability</h5>
+                <!-- /.title -->
+                <ul class="menu js__accordion">
+                    <li>
+                        <a class="waves-effect" href="{{ url_for('dash') }}"><i class="menu-icon mdi mdi-view-dashboard"></i><span>Dashboard</span></a>
+                    </li>
+                </ul>
+                <!-- /.menu js__accordion -->
+                <h5 class="title">Scenarios</h5>
+                <!-- /.title -->
+                <ul class="menu js__accordion">
+                    <li class="current active">
+                        <ul class="sub-menu js__content">
+                            <li><a href="{{ url_for('env') }}">Environment</a></li>
+                            <li class="current"><a href="{{ url_for('language') }}">Language</a></li>
+                            <li><a href="{{ url_for('rent') }}">Rent</a></li>
+                            <li><a href="{{ url_for('unem') }}">Unemployment</a></li>
+                        <!-- /.sub-menu js__content -->
+                    </li>
+                </ul>
+                <!-- /.menu js__accordion -->
+            </div>
+            <!-- /.navigation -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.main-menu -->
+
+    <div class="fixed-navbar">
+        <div class="pull-left"></div>
+        <!-- /.pull-left -->
+        <div class="pull-right"></div>
+        <!-- /.pull-right -->
+    </div>
+    <!-- /.fixed-navbar -->
+
+
+    <div id="wrapper">
+        <div class="main-content">
+            <div class="row small-spacing">
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Map Of Melbourne - Top 5 Spoken Languages In SA4 areas</h4>
+                        <!-- /.box-title -->
+                        <img src="/static/assets/images/map.png" usemap="#map" style="height: 480px">
+                        <map name="map">
+                            <area shape="poly" coords="163,238,184,253,197,212,162,205" title="Melbourne - Inner" 
+                                href="javascript:alert('Melbourne - Inner \nTop 5 Spoken Languages: English, Chinese, Arabic, French, German')" >
+                            <area shape="poly" coords="195,221,240,201,233,242,207,247" title="Melbourne - Inner East" 
+                                href="javascript:alert('Melbourne - Inner East \nTop 5 Spoken Languages: English, Chinese, Arabic, French, German')">
+                            <area shape="poly" coords="187,257,201,242,226,324" title="Melbourne - Inner South" 
+                                href="javascript:alert('Melbourne - Inner South \nTop 5 Spoken Languages: English, Chinese, French, German, Arabic')">
+                            <area shape="poly" coords="170,62,247,43,351,108,306,134,278,190,196,208" title="Melbourne - North East" 
+                                href="javascript:alert('Melbourne - North East \nTop 5 Spoken Languages: English, Chinese, Arabic, German, French')">
+                            <area shape="poly" coords="41,128,104,169,149,207,186,202,162,119,137,15,82,24" title="Melbourne - North West" 
+                                href="javascript:alert('Melbourne - North West \nTop 5 Spoken Languages: English, Arabic, Chinese, German, French')">
+                            <area shape="poly" coords="292,286,241,208,281,191,310,131,409,152,407,256" title="Melbourne - Outer East" 
+                                href="javascript:alert('Melbourne - Outer East \nTop 5 Spoken Languages: English, Chinese, German, Arabic, Dutch')">
+                            <area shape="poly" coords="4,166,76,141,157,245,49,285" title="Melbourne - West" 
+                                href="javascript:alert('Melbourne - West \nTop 5 Spoken Languages: English, Chinese, Arabic, German, French')">
+                            <area shape="poly" coords="96,410,162,473,248,430,258,382,252,327,188,406" title="Mornington Peninsula" 
+                                href="javascript:alert('Mornington Peninsula \nTop 5 Spoken Languages: English, Chinese, German, French, Dutch')">
+                        </map>
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-md-12 -->
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Word Cloud Of Spoken Languages In Melbourne</h4>
+                        <!-- /.box-title -->
+                        <img src="/static/assets/images/language_cloud.png" style="height: 480px">
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-md-12 -->
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Pie Chart of Languages (Aurin)</h4>
+                        <!-- /.box-title -->
+                        <canvas id="pie-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
+                        <!-- /#pie-chartjs-chart.chartjs-chart -->
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-md-12 -->
+
+                <div class="col-lg-6 col-md-12">
+                    <div class="box-content">
+                        <h4 class="box-title">Pie Chart of Languages (Twitter)</h4>
+                        <canvas id="donut-chartjs-chart" class="chartjs-chart" width="480" height="320"></canvas>
+                        <!-- /#donut-chartjs-chart.chartjs-chart -->
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+                <!-- /.col-lg-6 col-md-12 -->
+            
+            </div>
+            <!-- /.row small-spacing -->
+        </div>
+        <!-- /.main-content -->
+    </div>
+    <!--/#wrapper -->
+
+    <!-- JavaScript Libraries -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/assets/scripts/jquery.min.js"></script>
+    <script src="/static/assets/scripts/modernizr.min.js"></script>
+    <script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="/static/assets/plugin/nprogress/nprogress.js"></script>
+    <script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
+    <script src="/static/assets/plugin/waves/waves.min.js"></script>
+
+    <!-- chart.js Chart -->
+    <script src="/static/assets/plugin/chart/chartjs/Chart.bundle.js"></script>
+    <script src="/static/assets/scripts/chart.chartjs.black.init.js"></script>
+
+    <script src="/static/assets/scripts/main.min.js"></script>
+
+</body>
+
+</html>
