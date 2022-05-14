@@ -28,8 +28,9 @@ if __name__ == '__main__':
     app.run()
 
 try:
-    couchclient = couchdb.Server('')
-    tweet_db_name = ''
+    couchclient = couchdb.Server('http://admin:chocolate_milkshake@172.26.129.34:5984/')
+
+    tweet_db_name = 'oldtwitter'
     
     #Check the duplication of database
     try:
