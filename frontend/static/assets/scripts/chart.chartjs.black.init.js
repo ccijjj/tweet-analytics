@@ -15,6 +15,7 @@
 	$(document).ready(function(){
 		if ($('#bar-chartjs-chart').length) ChartJs.bar('bar-chartjs-chart','top','bar');
 		if ($('#bar-chartjs-chart1').length) ChartJs.bar1('bar-chartjs-chart1','top','bar');
+		if ($('#bar-chartjs-chart2').length) ChartJs.bar2('bar-chartjs-chart2','top','bar');
 		if ($('#horizontal-bar-chartjs-chart').length) ChartJs.bar('horizontal-bar-chartjs-chart','right','horizontalBar');
 		if ($('#line-chartjs-chart').length) ChartJs.line('line-chartjs-chart',false);
 		if ($('#line-chartjs-chart2').length) ChartJs.line2('line-chartjs-chart2',false);
@@ -100,7 +101,62 @@
 						borderWidth: 1,
 						hoverBackgroundColor: "rgba(245,112,122,0.6)",
 						hoverBorderColor: "#f5707a",
-						data: [0.085792,-0.083812,0.037613,-0.113497]
+						data: [0.092007,-0.065307,0.053619,0.167327]
+					}]
+				};
+
+			var ctx = document.getElementById(container).getContext("2d"),
+				skip = (type == "bar") ? "bottom" : "left" ;
+			new Chart(ctx, {
+				type: type,
+				data: barChartData,
+				options: {
+					// Elements options apply to all of the options unless overridden in a dataset
+					// In this case, we are setting the border of each bar to be 2px wide and green
+
+					hover: {
+						mode: 'label'
+					},
+					responsive: true,
+					legend: {
+						position: position,
+					},
+					scales: {
+						xAxes: [{
+							ticks: {
+								beginAtZero:true
+							},
+							gridLines: {
+								color: 'rgba(255,255,255,0.2)',
+								zeroLineColor: 'rgba(255,255,255,0.4)',
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							},
+							gridLines: {
+								color: 'rgba(255,255,255,0.2)',
+								zeroLineColor: 'rgba(255,255,255,0.4)',
+							}
+						}],
+					},
+
+				}
+			});
+			return false;
+		},
+		bar2: function(container,position,type){
+			var barChartData = {
+					labels: ["2014", "2015", "2016", "2017"],
+					datasets: [{
+						label: 'Proportion',
+						backgroundColor: "rgba(249,200,81,0.3)",
+						borderColor: "rgb(249, 200, 81)",
+						borderWidth: 1,
+						hoverBackgroundColor: "rgba(249,200,81,0.6)",
+						hoverBorderColor: "rgb(249, 200, 81)",
+						data: [0.07,0.20,0.16,0.06]
 					}]
 				};
 
