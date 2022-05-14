@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Rent</title>
+    <title>Housing</title>
 
     <!-- Main Styles -->
     <link rel="stylesheet" href="/static/assets/styles/style.min.css">
@@ -32,7 +32,7 @@
 <body>
     <div class="main-menu">
         <header class="header">
-            <a href="index.html" class="logo"><i class="fa fa-home">HOME</i></a>
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa fa-home">HOME</i></a>
         </header>
         <!-- /.header -->
         <div class="content">
@@ -53,8 +53,8 @@
                         <ul class="sub-menu js__content">
                             <li><a href="{{ url_for('env') }}">Environment</a></li>
                             <li><a href="{{ url_for('language') }}">Language</a></li>
-                            <li class="current"><a href="{{ url_for('rent') }}">Rent</a></li>
-                            <li><a href="{{ url_for('unem') }}">Unemployment</a></li>
+                            <li class="current"><a href="{{ url_for('rent') }}">Housing</a></li>
+                            <li><a href="{{ url_for('unem') }}">Employment</a></li>
                         </ul>
                         <!-- /.sub-menu js__content -->
                     </li>
@@ -86,23 +86,23 @@
                         <img src="/static/assets/images/map.png" usemap="#map" style="height: 480px">
                         <map name="map">
                             <area shape="poly" coords="163,238,184,253,197,212,162,205" title="Melbourne - Inner" 
-                                href="javascript:alert('Melbourne - Inner \nMedidan of Income: 54176.0 \nMedian of Earners Age: 35.0')" >
+                                href="javascript:alert('Melbourne - Inner \nMedian of Income: 54176.0 \nMedian of Earners Age: 35.0')" >
                             <area shape="poly" coords="195,221,240,201,233,242,207,247" title="Melbourne - Inner East" 
-                                href="javascript:alert('Melbourne - Inner East \nMedidan of Income: 49512.0 \nMedian of Earners Age: 45.0')">
+                                href="javascript:alert('Melbourne - Inner East \nMedian of Income: 49512.0 \nMedian of Earners Age: 45.0')">
                             <area shape="poly" coords="187,257,201,242,226,324" title="Melbourne - Inner South" 
-                                href="javascript:alert('Melbourne - Inner South \nMedidan of Income: 53035.0 \nMedian of Earners Age: 44.0')">
+                                href="javascript:alert('Melbourne - Inner South \nMedian of Income: 53035.0 \nMedian of Earners Age: 44.0')">
                             <area shape="poly" coords="170,62,247,43,351,108,306,134,278,190,196,208" title="Melbourne - North East" 
-                                href="javascript:alert('Melbourne - North East \nMedidan of Income: 46982.0 \nMedian of Earners Age: 41.0')">
+                                href="javascript:alert('Melbourne - North East \nMedian of Income: 46982.0 \nMedian of Earners Age: 41.0')">
                             <area shape="poly" coords="41,128,104,169,149,207,186,202,162,119,137,15,82,24" title="Melbourne - North West" 
-                                href="javascript:alert('Melbourne - North West \nMedidan of Income: 45421.0 \nMedian of Earners Age: 41.0')">
+                                href="javascript:alert('Melbourne - North West \nMedian of Income: 45421.0 \nMedian of Earners Age: 41.0')">
                             <area shape="poly" coords="292,286,241,208,281,191,310,131,409,152,407,256" title="Melbourne - Outer East" 
-                                href="javascript:alert('Melbourne - Outer East \nMedidan of Income: 46139.0 \nMedian of Earners Age: 44.0')">
+                                href="javascript:alert('Melbourne - Outer East \nMedian of Income: 46139.0 \nMedian of Earners Age: 44.0')">
                             <area shape="poly" coords="223,249,258,325,260,378,359,408,401,266,297,287" title="Melbourne - South East" 
-                                href="javascript:alert('Melbourne - South East \nMedidan of Income: 43878.0 \nMedian of Earners Age: 41.0')">
+                                href="javascript:alert('Melbourne - South East \nMedian of Income: 43878.0 \nMedian of Earners Age: 41.0')">
                             <area shape="poly" coords="4,166,76,141,157,245,49,285" title="Melbourne - West" 
-                                href="javascript:alert('Melbourne - West \nMedidan of Income: 46964.0 \nMedian of Earners Age: 38.0')">
+                                href="javascript:alert('Melbourne - West \nMedian of Income: 46964.0 \nMedian of Earners Age: 38.0')">
                             <area shape="poly" coords="96,410,162,473,248,430,258,382,252,327,188,406" title="Mornington Peninsula" 
-                                href="javascript:alert('Mornington Peninsula \nMedidan of Income: 43979.0 \nMedian of Earners Age: 45.0')">
+                                href="javascript:alert('Mornington Peninsula \nMedian of Income: 43979.0 \nMedian of Earners Age: 45.0')">
                         </map>
                     </div>
                     <!-- /.box-content -->
@@ -111,7 +111,7 @@
 
                 <div class="col-lg-6 col-md-12">
                     <div class="box-content">
-                        <h4 class="box-title">Word Cloud Of Tweets Related To Rental Topics</h4>
+                        <h4 class="box-title">Word Cloud Of Tweets Related To Housing Topics</h4>
                         <!-- /.box-title -->
                         <img src="/static/assets/images/rent_cloud.png" style="height: 480px">
                     </div>
@@ -121,7 +121,7 @@
 
                 <div class="col-lg-6 col-md-12">
                     <div class="box-content">
-                        <h4 class="box-title">Lines of Income and Rai</h4>
+                        <h4 class="box-title">Lines of Income and RAI</h4>
                         <!-- /.box-title -->
                          <canvas id="line-chartjs-chart" class="chartjs-chart" width="480" height="310"></canvas>
                         <!-- /#line-chartist-chart.chartist-chart -->

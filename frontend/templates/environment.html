@@ -32,7 +32,7 @@
 <body>
     <div class="main-menu">
         <header class="header">
-            <a href="index.html" class="logo"><i class="fa fa-home">HOME</i></a>
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa fa-home">HOME</i></a>
         </header>
         <!-- /.header -->
         <div class="content">
@@ -52,8 +52,8 @@
                         <ul class="sub-menu js__content">
                             <li class="current"><a href="{{ url_for('env') }}">Environment</a></li>
                             <li><a href="{{ url_for('language') }}">Language</a></li>
-                            <li><a href="{{ url_for('rent') }}">Rent</a></li>
-                            <li><a href="{{ url_for('unem') }}">Unemployment</a></li>
+                            <li><a href="{{ url_for('rent') }}">Housing</a></li>
+                            <li><a href="{{ url_for('unem') }}">Employment</a></li>
                         </ul>
                         <!-- /.sub-menu js__content -->
                     </li>

@@ -32,7 +32,7 @@
 <body>
     <div class="main-menu">
         <header class="header">
-            <a href="index.html" class="logo"><i class="fa fa-home">HOME</i></a>
+            <a href="{{ url_for('index') }}" class="logo"><i class="fa fa-home">HOME</i></a>
         </header>
         <!-- /.header -->
         <div class="content">
@@ -52,8 +52,8 @@
                         <ul class="sub-menu js__content">
                             <li><a href="{{ url_for('env') }}">Environment</a></li>
                             <li class="current"><a href="{{ url_for('language') }}">Language</a></li>
-                            <li><a href="{{ url_for('rent') }}">Rent</a></li>
-                            <li><a href="{{ url_for('unem') }}">Unemployment</a></li>
+                            <li><a href="{{ url_for('rent') }}">Housing</a></li>
+                            <li><a href="{{ url_for('unem') }}">Employment</a></li>
                         <!-- /.sub-menu js__content -->
                     </li>
                 </ul>
@@ -84,21 +84,23 @@
                         <img src="/static/assets/images/map.png" usemap="#map" style="height: 480px">
                         <map name="map">
                             <area shape="poly" coords="163,238,184,253,197,212,162,205" title="Melbourne - Inner" 
-                                href="javascript:alert('Melbourne - Inner \nTop 5 Spoken Languages: English, Chinese, Arabic, French, German')" >
+                                href="javascript:alert('Melbourne - Inner \nTop 5 Spoken Languages: English, Chinese, Greek, Italian, Vietnamese')" >
                             <area shape="poly" coords="195,221,240,201,233,242,207,247" title="Melbourne - Inner East" 
-                                href="javascript:alert('Melbourne - Inner East \nTop 5 Spoken Languages: English, Chinese, Arabic, French, German')">
+                                href="javascript:alert('Melbourne - Inner East \nTop 5 Spoken Languages: English, Chinese, Greek, Italian, Vietnamese')">
                             <area shape="poly" coords="187,257,201,242,226,324" title="Melbourne - Inner South" 
-                                href="javascript:alert('Melbourne - Inner South \nTop 5 Spoken Languages: English, Chinese, French, German, Arabic')">
+                                href="javascript:alert('Melbourne - Inner South \nTop 5 Spoken Languages: English, Chinese, Greek, Russian, Italian')">
                             <area shape="poly" coords="170,62,247,43,351,108,306,134,278,190,196,208" title="Melbourne - North East" 
-                                href="javascript:alert('Melbourne - North East \nTop 5 Spoken Languages: English, Chinese, Arabic, German, French')">
+                                href="javascript:alert('Melbourne - North East \nTop 5 Spoken Languages: English, Chinese, Italian, Greek, Arabic')">
                             <area shape="poly" coords="41,128,104,169,149,207,186,202,162,119,137,15,82,24" title="Melbourne - North West" 
-                                href="javascript:alert('Melbourne - North West \nTop 5 Spoken Languages: English, Arabic, Chinese, German, French')">
+                                href="javascript:alert('Melbourne - North West \nTop 5 Spoken Languages: English, Arabic, Italian, Turkish, Chinese')">
                             <area shape="poly" coords="292,286,241,208,281,191,310,131,409,152,407,256" title="Melbourne - Outer East" 
-                                href="javascript:alert('Melbourne - Outer East \nTop 5 Spoken Languages: English, Chinese, German, Arabic, Dutch')">
+                                href="javascript:alert('Melbourne - Outer East \nTop 5 Spoken Languages: English, Chinese, Italian, Greek, Hindi')">
+                                <area shape="poly" coords="223,249,258,325,260,378,359,408,401,266,297,287" title="Melbourne - South East" 
+                                href="javascript:alert('Melbourne - South East \nTop 5 Spoken Languages: English, Chinese, Vietnamese, Greek, Hindi')">
                             <area shape="poly" coords="4,166,76,141,157,245,49,285" title="Melbourne - West" 
-                                href="javascript:alert('Melbourne - West \nTop 5 Spoken Languages: English, Chinese, Arabic, German, French')">
+                                href="javascript:alert('Melbourne - West \nTop 5 Spoken Languages: English, Chinese, Vietnamese, Arabic, Hindi')">
                             <area shape="poly" coords="96,410,162,473,248,430,258,382,252,327,188,406" title="Mornington Peninsula" 
-                                href="javascript:alert('Mornington Peninsula \nTop 5 Spoken Languages: English, Chinese, German, French, Dutch')">
+                                href="javascript:alert('Mornington Peninsula \nTop 5 Spoken Languages: English, Chinese, Italian, Greek German')">
                         </map>
                     </div>
                     <!-- /.box-content -->
