@@ -26,18 +26,17 @@ def unem():
     return render_template('unemployment.html')
 
 if __name__ == '__main__':
-    if len(sys.argv) != 5:
+    if len(sys.argv) != 4:
         print("Please provide the correct Couch DB information")
-        print("Usage: python3 dashboard.py <usr> <pwd> <ip> <db name>")
+        print("Usage: python3 dashboard.py <db usr> <db pwd> <db address>")
         sys.exit(1)
-    
     usr, pwd, ip, tweet_db_name = sys.argv[1:5]
     try:
         couchclient = couchdb.Server(f"http://{usr}:{pwd}@{ip}:5984/")
-        tweet_db = couchclient[tweet_db_name]
+        tweet_db = couchclient['new_tweets']
     except:
         print("Cannot find CouchDB Server ... Exiting\n")
         print("----_Stack Trace_-----\n")
         raise
-    
+
     app.run()

@@ -1,5 +1,4 @@
 ---
-# Install dependencies on the host
 - name: Install Python dependencies
   apt:
     name: ['python3-dev', 'python3-setuptools', 'python3-pip']
@@ -11,7 +10,7 @@
     name: ['pip']
     state: latest
 
-- name: Install docker python module
+- name: Install Docker python module
   ansible.builtin.pip:
     name: ['docker']
     state: latest
@@ -37,4 +36,3 @@
     name: docker-ce
     state: latest
     update_cache: yes
-

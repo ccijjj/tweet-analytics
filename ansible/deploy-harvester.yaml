@@ -1,0 +1,16 @@
+---
+- hosts: managers
+  become: yes
+  vars_files:
+    - host_vars/common.yaml
+    - host_vars/couchdb.yaml
+    - host_vars/harvester.yaml
+  gather_facts: true
+  tasks:
+    - include_vars:
+        file: ../tweet_harvester/api_keys.yaml
+        name: keys
+    - debug: var=keys
+  roles:
+    - role: deploy-tweet-harvester
+...

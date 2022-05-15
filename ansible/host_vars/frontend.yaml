@@ -1,0 +1,2 @@
+local_path_to_flask_app: ../frontend/
+path_to_flask_app: /home/ubuntu/data/frontend

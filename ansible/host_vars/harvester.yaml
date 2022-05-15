@@ -1,2 +1,2 @@
-# Harvester
-path_to_harvester: /home/ubundtu/data/harvester
+local_path_to_havester: ../tweet_harvester/stream.py
+havester_directory: /home/ubundtu/data/harvester

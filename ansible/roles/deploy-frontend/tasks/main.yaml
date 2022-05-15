@@ -1,0 +1,42 @@
+---
+#- name: Install Python dependencies
+#  apt:
+#    name: ['python3-dev', 'python3-setuptools', 'python3-pip']
+#    state: latest
+#    update_cache: yes
+
+#- name: Update pip
+#  pip:
+#    name: ['pip']
+#    state: latest
+
+#- name: Install required modules for frontend
+#  ansible.builtin.pip:
+#    name: ['flask', 'couchdb']
+#    state: latest
+
+- name: Check if frontend directory exist
+  stat:
+    path: "{{ path_to_flask_app }}"
+  register: directory_stats
+
+- name: Create frontend app directory
+  file:
+    path: "{{ path_to_flask_app }}"
+    recurse: yes
+    state: directory
+    mode: 0777
+  when: directory_stats.stat.exists == false
+
+- name: Copy frontend files
+  copy:
+    src: "{{ local_path_to_flask_app }}"
+    dest: "{{ path_to_flask_app }}"
+    owner: ubuntu
+    group: ubuntu        
+    mode: 0777
+
+# print("Usage: python3 dashboard.py <db usr> <db pwd> <db ip>") 
+- name: Run frontend
+  raw: "python3 {{ path_to_flask_app }}/dashboard.py {{ couchdb_user }} {{ couchdb_password }} {{ groups['managers'][0] }}"
+...

@@ -14,7 +14,7 @@
     path: "{{ vol_mountpoint }}"
     recurse: yes
     state: directory
-    mode: '0777'
+    mode: 0777
   #when: directory_stats.stat.exists == false
 
 - name: Mount device
