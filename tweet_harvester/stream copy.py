@@ -1,21 +1,17 @@
-
-from distutils.debug import DEBUG
 import logging
+import time
+import json
+import sys
 
 import couchdb
-import configparser
+
+from urllib3 import Retry
 from textblob import TextBlob
 
 from urllib3.exceptions import ProtocolError
 
 import tweepy
 from tweepy import Stream
-
-
-import time
-
-import datetime
-
 
 consumer_key = "qWrrtRVJwGcdlMxomVnHWxHNk"
 consumer_secret = "aT9gwPNp7azSwiv9EyXTJhiM4772D6lxx4LqhT8UgrDf3yR0L3"
@@ -46,22 +42,43 @@ def get_tweet_database(client, dbname='melb_tweets'):
         logging.info(dbname + "created in CouchDB")
     return client[dbname]
 
-
 if __name__ == '__main__':
-    current_time = time.strftime("%Y-%m-%d_%H:%M:%S", time.localtime())
-    logging.basicConfig(filename='Harvester_{}.log'.format(current_time),
+
+    current_time = time.strftime("%Y/%m/%d_%H|%M|%S", time.localtime())
+    logging.basicConfig(filename='tweet_harvester-{}.log'.format(current_time),
                         filemode='a',
                         format='[%(asctime)s] %(name)s %(levelname)s %(message)s',
-                        datefmt="%Y-%m-%d %H:%M:%S",
+                        datefmt="%Y/%m/%d %H:%M:%S",
                         level=logging.DEBUG)
 
-    pass
+    api = None
+
+    try:
+        # first argument specifies the credential
+        with open(sys.argv[1],"r") as f:
+            credentials = json.load(f)
+            
+    except FileNotFoundError:
+        logging.critical("Could not open the file at "+sys.argv[1])
+        sys.exit(1)
+    except KeyError:
+        logging.critical("Please check the credential provided has the correct format")
+        sys.exit(1)
+    except:
+        logging.critical("An unknown error occured ")
+    
+    retry_count = 4
+
+    while (retry_count):
+        try:
+            
+        except:
+            time.sleep(10)
+            retry_count -= 1
 
 
-# consumer_key = 'AOWMzMqc6wUg92K3avHXq8u8s'
-# consumer_secret = 'dhHpQSmtb5rODqustlFr4fnq9kGayLUWQvFMPPeCAE5BiUVgZ6'
-# access_token = '1519236823960018944-sBQsPxqeRCb1GwbRvtk53RDLmSfiOY'
-# access_token_secret = 'R1POlI1Owl5FP1MrdBDcCpkZYpINOm6BMnrL2v8HJLzQf'
+    sys.exit(1)
+
 
 
 
@@ -85,7 +102,6 @@ except:
     print("----_Stack Trace_-----\n")
     raise
 
-from tweepy import Stream
 
 class MyStreamListener(Stream):
     def on_status(self, status):

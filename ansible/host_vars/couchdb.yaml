@@ -8,5 +8,3 @@ couchdb_password: chocolate_milkshake
 couchdb_cookie: bubble_tea
 couchdb_volume: "/home/ubuntu/data/couchdb"
 ...
-
-

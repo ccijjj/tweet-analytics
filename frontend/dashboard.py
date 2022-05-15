@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 import couchdb
+import sys
 
 app = Flask(__name__)
 @app.route("/")
@@ -25,22 +26,18 @@ def unem():
     return render_template('unemployment.html')
 
 if __name__ == '__main__':
-    app.run()
-
-try:
-    couchclient = couchdb.Server('http://admin:chocolate_milkshake@172.26.129.34:5984/')
-
-    tweet_db_name = 'oldtwitter'
+    if len(sys.argv) != 5:
+        print("Please provide the correct Couch DB information")
+        print("Usage: python3 dashboard.py <usr> <pwd> <ip> <db name>")
+        sys.exit(1)
     
-    #Check the duplication of database
+    usr, pwd, ip, tweet_db_name = sys.argv[1:5]
     try:
+        couchclient = couchdb.Server(f"http://{usr}:{pwd}@{ip}:5984/")
         tweet_db = couchclient[tweet_db_name]
-        print(tweet_db_name + " has already in the server!")
-    except couchdb.http.ResourceNotFound:
-        tweet_db = couchclient.create(tweet_db_name)
-        print("Create " + tweet_db_name +" in the server!")
-    print("Connected to the user database")
-except:
-    print("Cannot find CouchDB Server ... Exiting\n")
-    print("----_Stack Trace_-----\n")
-    raise
+    except:
+        print("Cannot find CouchDB Server ... Exiting\n")
+        print("----_Stack Trace_-----\n")
+        raise
+    
+    app.run()

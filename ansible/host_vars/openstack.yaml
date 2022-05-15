@@ -4,9 +4,8 @@ security_groups:
     description: "Security group for all servers"
   - name: couchdb
     description: "Security group for database servers"
-  # TODO: add frontend 
-  # - name: frontend
-  #  description: "Security group for frontend servers"
+  - name: frontend
+    description: "Security group for frontend servers"
 
 # Security group rules variables 
 security_group_rules:
@@ -45,6 +44,14 @@ security_group_rules:
     port_range_max: 9200
     remote_ip_prefix: 0.0.0.0/0
 
+  # Flask rule
+  - name: flask-webapp
+    security_group: frontend
+    protocol: tcp
+    port_range_min: 5000
+    port_range_max: 5000
+    remote_ip_prefix: 0.0.0.0/0
+
 # Volume variables
 volumes:
   - vol_name: instance-1-volume
@@ -73,5 +80,5 @@ instances:
     security_groups: ['common', 'couchdb']
     volumes: ['instance-3-volume']
   - name: instance-4
-    security_groups: ['common'] #, 'frontend'] 
+    security_groups: ['common', 'frontend'] 
     volumes: ['instance-4-volume']
