@@ -1,7 +1,7 @@
 /**
  * Theme: Ninja Admin Template
  * Author: NinjaTeam
- * Module/App: Chartist-Chart
+ * Module/App: Chartjs-Chart
  */
 
 (function($) {
@@ -20,6 +20,7 @@
 		if ($('#line-chartjs-chart').length) ChartJs.line('line-chartjs-chart',false);
 		if ($('#line-chartjs-chart2').length) ChartJs.line2('line-chartjs-chart2',false);
 		if ($('#line-chartjs-chart3').length) ChartJs.line3('line-chartjs-chart3',false);
+		if ($('#line-chartjs-chart4').length) ChartJs.line4('line-chartjs-chart4',false);
 		if ($('#pie-chartjs-chart').length) ChartJs.pie('pie-chartjs-chart','pie');
 		if ($('#donut-chartjs-chart').length) ChartJs.pie2('donut-chartjs-chart','pie');
 		if ($('#polar-chartjs-chart').length) ChartJs.polar('polar-chartjs-chart');
@@ -314,7 +315,7 @@
 		},
 		line3: function(container,fill){
 			var lineData = {
-					labels: ['2014', '2015', '2016', '2017 '],
+					labels: ['2014', '2015', '2016', '2017'],
 					datasets: [{
 						label: 'Job Searching Weeks',
 						fill: fill,
@@ -322,6 +323,53 @@
 						pointBackgroundColor: "rgb(13,238,204)",
 						backgroundColor: "rgb(46,135,100)",
 						data: [ 36.75 ,33.53 ,30.17 ,34.0]
+					},
+					]
+				};
+
+			var ctx = document.getElementById(container).getContext("2d");
+			new Chart(ctx, {
+				type: 'line',
+				data: lineData,
+				options: {
+					hover: {
+						mode: 'label'
+					},
+					responsive: true,
+					scales: {
+						xAxes: [{
+							ticks: {
+								beginAtZero:true
+							},
+							gridLines: {
+								color: 'rgba(255,255,255,0.2)',
+								zeroLineColor: 'rgba(255,255,255,0.4)',
+							}
+						}],
+						yAxes: [{
+							ticks: {
+								beginAtZero:true
+							},
+							gridLines: {
+								color: 'rgba(255,255,255,0.2)',
+								zeroLineColor: 'rgba(255,255,255,0.4)',
+							}
+						}]
+					}
+				}
+			});
+			return false;
+		},
+		line4: function(container,fill){
+			var lineData = {
+					labels: ['2014', '2015', '2016', '2017'],
+					datasets: [{
+						label: 'Sensitivity Score',
+						fill: fill,
+						borderColor: "rgba(245,112,122,1)",
+						pointBackgroundColor: "rgb(245,112,122)",
+						backgroundColor: "rgba(245,112,122,0.3)",
+						data: [0.238715, 0.246787, 0.235607, 0.115582]
 					},
 					]
 				};
