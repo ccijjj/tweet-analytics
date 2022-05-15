@@ -1,2 +1,2 @@
 local_path_to_havester: ../tweet_harvester/stream.py
-havester_directory: /home/ubundtu/data/harvester
+havester_directory: /home/ubuntu/data/harvester
