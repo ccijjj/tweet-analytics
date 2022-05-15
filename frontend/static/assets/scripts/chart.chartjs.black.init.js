@@ -96,7 +96,7 @@
 			var barChartData = {
 					labels: ["2014", "2015", "2016", "2017"],
 					datasets: [{
-						label: 'Sensitivity Score',
+						label: 'Sentiment Score',
 						backgroundColor: "rgba(245,112,122,0.3)",
 						borderColor: "#f5707a",
 						borderWidth: 1,
@@ -364,7 +364,7 @@
 			var lineData = {
 					labels: ['2014', '2015', '2016', '2017'],
 					datasets: [{
-						label: 'Sensitivity Score',
+						label: 'Sentiment Score',
 						fill: fill,
 						borderColor: "rgba(245,112,122,1)",
 						pointBackgroundColor: "rgb(245,112,122)",
