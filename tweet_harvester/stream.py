@@ -40,13 +40,15 @@ class MyStreamListener(Stream):
                            "userlocation": userlocation, "lang": lang, "geo": geo,
                            "polarity": polarity, "subjectivity": subjectivity})
             self.count += 1
-            print(f"{self.count:>5d}: {text}")
-            logging.info(f"Status {id_str} collected")
+            #print(f"{self.count:>5d}: {text}")
+            logging.info(f"{self.count:>5d}: Status {id_str} collected")
         else:
-            print(f"{-1:>5} Retweet ignored")
+            #print(f"{-1:>5} Retweet ignored")
+            pass
 
     def on_error(self, status_code):
         if status_code == 420:  # end of monthly limit rate (500k)
+            time.sleep(10)
             return False
 
 
@@ -73,8 +75,8 @@ def get_tweet_database(client, dbname='melb_tweets'):
 
 if __name__ == '__main__':
     current_time = time.strftime("%Y%m%d_%H%M%S", time.localtime())
-    logging.basicConfig(filename='tweet_harvester-{}.log'.format(current_time),
-                        filemode='a',
+    logging.basicConfig(#filename='tweet_harvester-{}.log'.format(current_time),
+                        #filemode='a',
                         format='[%(asctime)s] %(name)s %(levelname)s %(message)s',
                         datefmt="%Y/%m/%d %H:%M:%S",
                         level=logging.INFO)
