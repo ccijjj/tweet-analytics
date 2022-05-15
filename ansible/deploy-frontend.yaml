@@ -1,0 +1,9 @@
+---
+- hosts: frontend
+  become: yes
+  vars_files:
+    - host_vars/couchdb.yaml
+  gather_facts: true
+  roles:
+    - role: deploy-frontend
+...
