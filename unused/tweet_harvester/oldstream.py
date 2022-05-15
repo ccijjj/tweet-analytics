@@ -66,7 +66,8 @@ class MyStreamListener(Stream):
         polarity = sent.polarity
         subjectivity = sent.subjectivity
 
-        if retweeted == False:
+        if retweeted == False and id_str not in tweet_db:
+            
             tweet_db.save({"id": id_str, "createtime": createtime, "text": text, "username": username,
                            "userlocation": userlocation, "lang": lang, "geo": geo,
                            "polarity": polarity, "subjectivity": subjectivity})
