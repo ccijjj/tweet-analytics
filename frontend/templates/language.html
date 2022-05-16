@@ -11,22 +11,17 @@
     <title>Language</title>
 
     <!-- Main Styles -->
-    <link rel="stylesheet" href="/static/assets/styles/style.min.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/styles/style.min.css')}}" />
     <!-- Material Design Icon -->
-    <link rel="stylesheet" href="/static/assets/fonts/material-design/css/materialdesignicons.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/fonts/material-design/css/materialdesignicons.css')}}" />
     <!-- mCustomScrollbar -->
-    <link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css')}}" />
     <!-- Waves Effect -->
-    <link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/plugin/waves/waves.min.css')}}" />
     <!-- Sweet Alert -->
-    <link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/plugin/sweet-alert/sweetalert.css')}}" />
     <!-- Dark Themes -->
-    <link rel="stylesheet" href="/static/assets/styles/style-black.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/styles/style-black.min.css')}}" />
 </head>
 
 <body>
@@ -57,7 +52,7 @@
                         <!-- /.sub-menu js__content -->
                     </li>
                 </ul>
-                <!-- /.menu js__accordion -->
+               </ul> <!-- /.menu js__accordion -->
             </div>
             <!-- /.navigation -->
         </div>
@@ -81,7 +76,7 @@
                     <div class="box-content">
                         <h4 class="box-title">Map Of Melbourne - Top 5 Spoken Languages In SA4 areas</h4>
                         <!-- /.box-title -->
-                        <img src="/static/assets/images/map.png" usemap="#map" style="height: 480px">
+                         <img src="{{ url_for('static',filename='assets/images/map.png' )}}">
                         <map name="map">
                             <area shape="poly" coords="163,238,184,253,197,212,162,205" title="Melbourne - Inner" 
                                 href="javascript:alert('Melbourne - Inner \nTop 5 Spoken Languages: English, Chinese, Greek, Italian, Vietnamese')" >
@@ -111,7 +106,7 @@
                     <div class="box-content">
                         <h4 class="box-title">Word Cloud Of Spoken Languages In Melbourne</h4>
                         <!-- /.box-title -->
-                        <img src="/static/assets/images/language_cloud.png" style="height: 480px">
+                         <img src="{{ url_for('static',filename='assets/images/language_cloud.png' )}}">
                     </div>
                     <!-- /.box-content -->
                 </div>
@@ -147,19 +142,16 @@
 
     <!-- JavaScript Libraries -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/static/assets/scripts/jquery.min.js"></script>
-    <script src="/static/assets/scripts/modernizr.min.js"></script>
-    <script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="/static/assets/plugin/nprogress/nprogress.js"></script>
-    <script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
-    <script src="/static/assets/plugin/waves/waves.min.js"></script>
-
-    <!-- chart.js Chart -->
-    <script src="/static/assets/plugin/chart/chartjs/Chart.bundle.js"></script>
-    <script src="/static/assets/scripts/chart.chartjs.black.init.js"></script>
-
-    <script src="/static/assets/scripts/main.min.js"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/jquery.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/modernizr.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/nprogress/nprogress.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/sweet-alert/sweetalert.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/waves/waves.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/chart/chartjs/Chart.bundle.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/chart.chartjs.black.init.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/main.min.js') }}"></script>
 
 </body>
 

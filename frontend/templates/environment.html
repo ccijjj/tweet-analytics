@@ -11,22 +11,18 @@
     <title>Environment</title>
 
     <!-- Main Styles -->
-    <link rel="stylesheet" href="/static/assets/styles/style.min.css">
 
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/styles/style.min.css')}}" />
     <!-- Material Design Icon -->
-    <link rel="stylesheet" href="/static/assets/fonts/material-design/css/materialdesignicons.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/fonts/material-design/css/materialdesignicons.css')}}" />
     <!-- mCustomScrollbar -->
-    <link rel="stylesheet" href="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.min.css')}}" />
     <!-- Waves Effect -->
-    <link rel="stylesheet" href="/static/assets/plugin/waves/waves.min.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/plugin/waves/waves.min.css')}}" />
     <!-- Sweet Alert -->
-    <link rel="stylesheet" href="/static/assets/plugin/sweet-alert/sweetalert.css">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/plugin/sweet-alert/sweetalert.css')}}" />
     <!-- Dark Themes -->
-    <link rel="stylesheet" href="/static/assets/styles/style-black.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='assets/styles/style-black.min.css')}}" />
 </head>
 
 <body>
@@ -82,7 +78,7 @@
                     <div class="box-content">
                         <h4 class="box-title">Word Cloud 0f Tweets Related To Environment</h4>
                         <!-- /.box-title -->
-                        <img src="/static/assets/images/environment_cloud.png" style="height: 480px">
+                        <img src="{{ url_for('static',filename='assets/images/environment_cloud.png' )}}">
                     </div>
                     <!-- /.box-content -->
                 </div>
@@ -115,24 +111,18 @@
         </div>
         <!-- /.main-content -->
     </div>
-    <!--/#wrapper -->
 
-    <!-- JavaScript Libraries -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/static/assets/scripts/jquery.min.js"></script>
-    <script src="/static/assets/scripts/modernizr.min.js"></script>
-    <script src="/static/assets/plugin/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/static/assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="/static/assets/plugin/nprogress/nprogress.js"></script>
-    <script src="/static/assets/plugin/sweet-alert/sweetalert.min.js"></script>
-    <script src="/static/assets/plugin/waves/waves.min.js"></script>
 
-    <!-- chart.js Chart -->
-    <script src="/static/assets/plugin/chart/chartjs/Chart.bundle.min.js"></script>
-    <script src="/static/assets/scripts/chart.chartjs.black.init.js"></script>
-    
-    <script src="/static/assets/scripts/main.min.js"></script>
-
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/jquery.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/modernizr.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/nprogress/nprogress.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/sweet-alert/sweetalert.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/waves/waves.min.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/plugin/chart/chartjs/Chart.bundle.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/chart.chartjs.black.init.js') }}"></script>
+    <script rel="stylesheet" src="{{ url_for('static',filename='assets/scripts/main.min.js') }}"></script>
 </body>
 
 </html>
