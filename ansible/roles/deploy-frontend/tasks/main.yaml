@@ -38,5 +38,5 @@
 
 # print("Usage: python3 dashboard.py <db usr> <db pwd> <db ip>") 
 - name: Run frontend
-  raw: "python3 {{ path_to_flask_app }}/dashboard.py {{ couchdb_user }} {{ couchdb_password }} {{ groups['managers'][0] }} &"
+  shell: "cd {{ path_to_flask_app }}; nohup python3 dashboard.py {{ couchdb_user }} {{ couchdb_password }} {{ groups['managers'][0] }} &"
 ...

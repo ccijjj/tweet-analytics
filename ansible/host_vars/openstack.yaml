@@ -51,6 +51,12 @@ security_group_rules:
     port_range_min: 5000
     port_range_max: 5000
     remote_ip_prefix: 0.0.0.0/0
+  - name: flask-couchdb
+    security_group: frontend
+    protocol: tcp
+    port_range_min: 5984
+    port_range_max: 5984
+    remote_ip_prefix: 0.0.0.0/0
 
 # Volume variables
 volumes:
