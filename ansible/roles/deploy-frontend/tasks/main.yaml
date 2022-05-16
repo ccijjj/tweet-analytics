@@ -28,13 +28,13 @@
     mode: 0777
   when: directory_stats.stat.exists == false
 
-- name: Copy frontend files
-  copy:
-    src: "{{ local_path_to_flask_app }}"
-    dest: "{{ path_to_flask_app }}"
-    owner: ubuntu
-    group: ubuntu        
-    mode: 0777
+#- name: Copy frontend files
+#  copy:
+#    src: "{{ local_path_to_flask_app }}"
+#    dest: "{{ path_to_flask_app }}"
+#    owner: ubuntu
+#    group: ubuntu        
+#    mode: 0777
 
 # print("Usage: python3 dashboard.py <db usr> <db pwd> <db ip>") 
 - name: Run frontend

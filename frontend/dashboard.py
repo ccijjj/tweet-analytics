@@ -30,7 +30,7 @@ if __name__ == '__main__':
         print("Please provide the correct Couch DB information")
         print("Usage: python3 dashboard.py <db usr> <db pwd> <db address>")
         sys.exit(1)
-    usr, pwd, ip, tweet_db_name = sys.argv[1:5]
+    usr, pwd, ip = sys.argv[1:4]
     try:
         couchclient = couchdb.Server(f"http://{usr}:{pwd}@{ip}:5984/")
         tweet_db = couchclient['new_tweets']
