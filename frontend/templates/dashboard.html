@@ -59,7 +59,7 @@
         </div>
         <!-- /.content -->
     </div>
-    <!-- /.main-menu -->
+
 
     <div class="fixed-navbar">
         <div class="pull-left"></div>
@@ -78,7 +78,7 @@
                         <h4 class="box-title">Map Of Melbourne - Person Life Expectancy In SA4 Areas</h4>
                         <!-- /.box-title -->
 
-                        <img src="{{ url_for('static',filename='assets/images/map.png' )}}">
+                        <img src="{{ url_for('static',filename='assets/images/map.png' )}}" usemap="#map">
                         <map name="map">
                             <area shape="poly" coords="163,238,184,253,197,212,162,205" title="Melbourne - Inner" 
                                 href="javascript:alert('Melbourne - Inner \nPerson life expectancy(2013-2015): 83.8 \nPerson life expectancy(2014-2016): 84.0 \nPerson life expectancy(2015-2017): 84.4 \nPerson life expectancy(2016-2018): 84.9 \nPerson life expectancy(2017-2019): 84.6')" >
@@ -160,3 +160,15 @@
 </body>
 
 </html>
+<!--     if len(sys.argv) != 4:
+        print("Please provide the correct Couch DB information")
+        print("Usage: python3 dashboard.py <db usr> <db pwd> <db address>")
+        sys.exit(1)
+    usr, pwd, ip = sys.argv[1:4]
+    try:
+        couchclient = couchdb.Server(f"http://{usr}:{pwd}@{ip}:5984/")
+        tweet_db = couchclient['new_tweets']
+    except:
+        print("Cannot find CouchDB Server ... Exiting\n")
+        print("----_Stack Trace_-----\n")
+        raise-->
